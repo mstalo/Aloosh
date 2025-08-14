@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>استخراج الروابط فقط</title>
+  <title>Extract Links Only</title>
   <style>
     :root {
       --bg: #0b1020;
@@ -56,45 +56,44 @@
 </head>
 <body>
   <div class="container">
-    <h1>استخراج الروابط (URLs) فقط</h1>
-    <p>ألصِق النص داخل المربع الأيمن (قد يحتوي على أعمدة مثل <span class="small">cart / subscribe / cloudflare…</span>) وسيتم استخراج الروابط فقط بالترتيب.</p>
-
+    <h1>Extract URLs Only</h1>
+    <p>Paste the text inside the right box (it may contain columns like <span class="small">cart / subscribe / cloudflare…</span> and only the links will be extracted in order.</p>
     <div class="grid">
       <!-- الإدخال -->
       <section class="card">
         <header>
-          <h2>النص الخام</h2>
-          <label class="switch"><input type="checkbox" id="dedupe" checked> إزالة المكرر</label>
+          <h2>Raw Text</h2>
+          <label class="switch"><input type="checkbox" id="dedupe" checked> Remove Duplicate</label>
         </header>
         <div class="body">
           <textarea id="input" placeholder="مثال:\nhttps://underarmour.com                            cart            Vercel\nhttps://sportsmansoutdoorsuperstore.com            cart            cloudflare\nhttps://americanrifleman.org                       subscribe       cloudflare\nhttps://craftholsters.com                          subscribe       nginx/1.29.0\nhttps://grabagun.com                               cart            cloudflare\nhttps://pewpewtactical.com                         cart            cloudflare"></textarea>
           <div class="actions">
-            <button id="extract">استخراج الروابط</button>
-            <button id="clear" class="secondary">مسح</button>
-            <button id="sample" class="ghost">إدراج مثال</button>
+            <button id="extract">Extract links</button>
+            <button id="clear" class="secondary">Clear</button>
+            <button id="sample" class="ghost">Insert example</button>
           </div>
-          <div class="hint">الخوارزمية تلتقط أول رابط في كل سطر وتتجاهل ما بعده (المسافات، علامات التبويب، الكلمات الإضافية…).</div>
+          <div class="hint">The algorithm picks up the first link in each line and ignores everything after it (spaces, tabs, extra words…).</div>
         </div>
       </section>
 
       <!-- الإخراج -->
       <section class="card">
         <header class="row">
-          <h2>الروابط المستخرَجة</h2>
+          <h2>Extracted links</h2>
           <div class="row">
-            <span id="count" class="badge">0 رابط</span>
-            <button id="copy" class="secondary">نسخ</button>
-            <button id="download" class="secondary">تنزيل .txt</button>
+            <span id="count" class="badge">0 Link</span>
+            <button id="copy" class="secondary">Copy</button>
+            <button id="download" class="secondary">Download .txt</button>
           </div>
         </header>
         <div class="body">
           <textarea id="output" placeholder="ستظهر الروابط هنا…" readonly></textarea>
-          <div class="hint">يتم الحفاظ على ترتيب الظهور. عند تفعيل إزالة المكرر، سيتم إبقاء أول ظهور فقط لكل رابط.</div>
+          <div class="hint">The order of appearance is maintained. When duplicate deletion is enabled, only the first appearance of each link will be kept.</div>
         </div>
       </section>
     </div>
 
-    <div class="footer">صُمِّم بواجهة بسيطة للعمل على النصوص التي تحتوي على أعمدة مفصولة بمسافات/تبويبات.</div>
+    <div class="footer">Designed with a simple interface for working with text containing columns separated by spaces/tabs.</div>
   </div>
 
   <script>
@@ -184,3 +183,4 @@
   </script>
 </body>
 </html>
+
